@@ -21,13 +21,20 @@ class EffectsViewController: UIViewController {
     let slowSpeed: Float = 0.5
     let highSpeed: Float = 1.5
     
+    @IBOutlet weak var slowButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var lowePitchButton: UIButton!
+    @IBOutlet weak var highPitchButton: UIButton!
+    @IBOutlet weak var fastModeButton: UIButton!
+    @IBOutlet weak var reverbModeButton: UIButton!
+    @IBOutlet weak var echoModeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         togglePlayPause(false, false)
         setupAudio()
+        setButtonsAspect()
         // Do any additional setup after loading the view.
     }
 
@@ -195,5 +202,16 @@ class EffectsViewController: UIViewController {
     static let AudioRecordingError = "Audio Recording Error"
     static let AudioFileError = "Audio File Error"
     static let AudioEngineError = "Audio Engine Error"
+    }
+    
+    func setButtonsAspect(){
+        slowButton.imageView?.contentMode = .scaleAspectFit
+        fastModeButton.imageView?.contentMode = .scaleAspectFit
+        echoModeButton.imageView?.contentMode = .scaleAspectFit
+        reverbModeButton.imageView?.contentMode = .scaleAspectFit
+        highPitchButton.imageView?.contentMode = .scaleAspectFit
+        lowePitchButton.imageView?.contentMode = .scaleAspectFit
+        playButton.imageView?.contentMode = .scaleAspectFit
+        pauseButton.imageView?.contentMode = .scaleAspectFit
     }
 }

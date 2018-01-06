@@ -58,7 +58,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag{
-            performSegue(withIdentifier: "showEffects", sender: audioRecorder.url)
+            let myController = self.storyboard?.instantiateViewController(withIdentifier: "effectsVC") as! EffectsViewController
+            myController.recordedAudioURL = recorder.url
+            self.navigationController?.pushViewController(myController, animated: true)
         }else{
             print("Error")
         }

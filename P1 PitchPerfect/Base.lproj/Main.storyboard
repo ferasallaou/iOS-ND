@@ -65,7 +65,6 @@
                         <outlet property="recordButton" destination="dFZ-ua-I3f" id="itt-4E-vmD"/>
                         <outlet property="stopBtn" destination="Djz-Fy-eEr" id="WYa-ok-b64"/>
                         <outlet property="textLabel" destination="yiy-7j-Z6f" id="hHW-yG-P5e"/>
-                        <segue destination="xIn-8l-Ijh" kind="presentation" identifier="showEffects" id="jc5-cV-jC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,7 +74,7 @@
         <!--Effects View Controller-->
         <scene sceneID="AF9-fm-RQW">
             <objects>
-                <viewController id="xIn-8l-Ijh" customClass="EffectsViewController" customModule="P1_PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="effectsVC" id="xIn-8l-Ijh" customClass="EffectsViewController" customModule="P1_PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u8z-gL-po5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,24 +143,17 @@
                                         <rect key="frame" x="0.0" y="485.5" width="375" height="161.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVy-R7-uoO">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="161.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="161.5"/>
                                                 <state key="normal" image="PauseBlue"/>
                                                 <connections>
                                                     <action selector="pauseButtonPressed:" destination="xIn-8l-Ijh" eventType="touchUpInside" id="XTm-X5-uE0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-iM-mr0">
-                                                <rect key="frame" x="125" y="0.0" width="125" height="161.5"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="161.5"/>
                                                 <state key="normal" title="Button" image="ResumeBlue"/>
                                                 <connections>
                                                     <action selector="playButtonPressed:" destination="xIn-8l-Ijh" eventType="touchUpInside" id="wTm-e8-Uoa"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mb-PN-zTL">
-                                                <rect key="frame" x="250" y="0.0" width="125" height="161.5"/>
-                                                <state key="normal" title="Back"/>
-                                                <connections>
-                                                    <action selector="backAndDismiss:" destination="xIn-8l-Ijh" eventType="touchUpInside" id="N6g-qK-ZsL"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -179,8 +171,14 @@
                         <viewLayoutGuide key="safeArea" id="U5u-gX-PET"/>
                     </view>
                     <connections>
+                        <outlet property="echoModeButton" destination="2YM-hC-Plq" id="BCX-ba-T6X"/>
+                        <outlet property="fastModeButton" destination="iQ2-dt-Euz" id="tQe-VR-o9T"/>
+                        <outlet property="highPitchButton" destination="5pA-0Z-GE2" id="Rqa-43-xGd"/>
+                        <outlet property="lowePitchButton" destination="Dfz-f9-tzE" id="7ch-7N-7Ji"/>
                         <outlet property="pauseButton" destination="GVy-R7-uoO" id="uW1-D8-glO"/>
                         <outlet property="playButton" destination="gJc-iM-mr0" id="tLU-LK-RGt"/>
+                        <outlet property="reverbModeButton" destination="NS1-J0-jBp" id="jSd-GV-j1r"/>
+                        <outlet property="slowButton" destination="GIw-dc-VTe" id="q47-4Y-hqf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7M-pK-AVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
